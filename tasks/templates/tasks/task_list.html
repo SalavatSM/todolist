@@ -1,0 +1,16 @@
+<!-- tasks/task_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task List</title>
+</head>
+<body>
+    <h1>Task List</h1>
+    <ul>
+        {% for task in tasks %}
+        <li>{{ task.name }} - <a href="{% url 'task_update' task.pk %}">Edit</a> | <a href="{% url 'task_delete' task.pk %}">Delete</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'task_create' %}">Add new task</a>
+</body>
+</html>
